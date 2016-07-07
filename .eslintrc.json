@@ -1,0 +1,35 @@
+{
+  "extends": "eslint-config-shakacode",
+
+  "plugins": [
+    "react-native"
+  ],
+
+  "env": {
+    "mocha": true,
+    "browser": true,
+    "node": true
+  },
+
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".android.js", ".ios.js"]
+      }
+    }
+  },
+  
+  "globals": {
+    "__DEV__": true
+  },
+
+  "rules": {
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 2,
+    "react-native/no-inline-styles": 2,
+    "react-native/no-color-literals": 2,
+    "react/jsx-no-bind": 1,
+    "react/prefer-stateless-function": 1,
+    "react/jsx-indent": 1
+  }
+}
