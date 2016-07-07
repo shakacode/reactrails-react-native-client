@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "mocha --opts test/mocha.opts test/**/*.spec.js"
   },
   "dependencies": {
     "react": "15.2.0",
@@ -12,12 +13,19 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "enzyme": "2.3.0",
+    "react-dom": "0.14.8",
+    "react-addons-test-utils": "0.14.8",
+    "mocha": "^2.4.5",
     "eslint": "3.0.1",
     "eslint-config-shakacode": "5.0.0",
     "eslint-plugin-import": "1.10.2",
     "eslint-plugin-react": "5.2.2",
     "eslint-plugin-react-native": "^1.1.0",
-    "eslint-plugin-jsx-a11y": "1.5.5",
-    "mocha": "^2.4.5"
+    "eslint-plugin-jsx-a11y": "1.5.5"
+  },
+  "babel": {
+    "presets": [
+      "react-native"
+    ]
   }
 }
