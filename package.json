@@ -8,21 +8,27 @@
     "lint": "node_modules/eslint/bin/eslint.js ."
   },
   "dependencies": {
-    "react": "15.2.0",
-    "react-native": "0.29.0"
+    "lodash": "^4.13.1",
+    "react": "^15.2.1",
+    "react-native": "0.29.0",
+    "react-redux": "^4.4.2",
+    "redux": "^3.4.0",
+    "redux-thunk": "^2.0.1",
+    "reselect": "^2.5.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "enzyme": "2.3.0",
-    "react-dom": "0.14.8",
-    "react-addons-test-utils": "0.14.8",
-    "mocha": "^2.4.5",
-    "eslint": "3.0.1",
+    "eslint": "2.9.0",
     "eslint-config-shakacode": "5.0.0",
     "eslint-plugin-import": "1.10.2",
+    "eslint-plugin-jsx-a11y": "1.2.0",
     "eslint-plugin-react": "5.2.2",
     "eslint-plugin-react-native": "^1.1.0",
-    "eslint-plugin-jsx-a11y": "1.5.5"
+    "mocha": "^2.4.5",
+    "react-addons-test-utils": "15.2.1",
+    "react-dom": "15.2.1",
+    "redux-logger": "^2.6.1"
   },
   "babel": {
     "presets": [
