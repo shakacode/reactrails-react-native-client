@@ -1,8 +1,13 @@
 import React, { PropTypes } from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
+
+import styles from './CommentStyle';
 
 const Comment = (props) => (
-  <Text>{`${props.author}: ${props.text}`}</Text>
+  <View style={styles.container}>
+    <Text style={styles.author} numberOfLines={1}>{props.author}</Text>
+    <Text style={styles.text} numberOfLines={1}>{props.text}</Text>
+  </View>
 );
 
 Comment.propTypes = {

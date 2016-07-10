@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { ListView } from 'react-native';
 
 import Comment from '../Comment/Comment';
+import styles from './CommentsStyle';
 
 export default class Comments extends Component {
 
@@ -22,6 +23,7 @@ export default class Comments extends Component {
       <ListView
         dataSource={this.state.dataSource}
         renderRow={(comment) => <Comment {...comment} />}
+        style={styles.container}
       />
     );
   }
