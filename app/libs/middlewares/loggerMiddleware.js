@@ -1,5 +1,4 @@
 /* eslint no-console: 0 */
-import _ from 'lodash/fp';
 
 export default function logger({ getState }) {
   return next => action => {

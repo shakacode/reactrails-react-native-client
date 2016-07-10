@@ -24,7 +24,6 @@ export default class Comments extends Component {
   componentWillReceiveProps(nextProps) {
     const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.setState({ dataSource: ds.cloneWithRows(nextProps.comments) });
-    console.log("Props", nextProps);
   }
 
   render() {
@@ -61,4 +60,7 @@ export default class Comments extends Component {
 Comments.propTypes = {
   comments: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
+  actions: PropTypes.shape({
+    fetchComments: PropTypes.func.isRequired,
+  }),
 };
