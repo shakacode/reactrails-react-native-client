@@ -10,10 +10,9 @@ export default function logger({ getState }) {
 
     // We can't _read_ immutable objects in console out-of-the-box.
     const state = getState();
-    const transformer = storeItem => (
-        state[storeItem].toJS ? state[storeItem].toJS() : state[storeItem]
-      );
-    const readableState = _.mapKeys(transformer)(state);
+
+    // Todo - make general case
+    const readableState = { $$commentsStore: state.$$commentsStore.toJS() };
     console.log('state after dispatch', readableState);
 
     // This will likely be the action itself, unless

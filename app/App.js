@@ -6,7 +6,6 @@ import CommentsContainer from './containers/CommentsContainer';
 
 export default () => {
   const store = createStore();
-  console.log(store);
   return (
     <Provider store={store}>
       <CommentsContainer />

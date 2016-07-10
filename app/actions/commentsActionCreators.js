@@ -47,8 +47,9 @@ export function fetchComments() {
     return (
       api
         .fetchEntities()
-        .then(res => dispatch(fetchCommentsSuccess(res.data)))
-        .catch(res => dispatch(fetchCommentsFailure(res.data)))
+        .then(response => response.json())
+        .then(json => dispatch(fetchCommentsSuccess(json)))
+        .catch(error => dispatch(fetchCommentsFailure(error)))
     );
   };
 }
@@ -60,7 +61,7 @@ export function submitComment(comment) {
       api
         .submitEntity({ comment })
         .then(res => dispatch(submitCommentSuccess(res.data)))
-        .catch(res => dispatch(submitCommentFailure(res.data)))
+        .catch(error => dispatch(submitCommentFailure(error)))
     );
   };
 }

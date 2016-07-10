@@ -8,11 +8,7 @@ export default {
    * @returns {Promise} - Result of ajax call.
    */
   fetchEntities() {
-    return fetch({
-      method: 'GET',
-      url: API_URL,
-      responseType: 'json',
-    });
+    return fetch(API_URL);
   },
 
   /**

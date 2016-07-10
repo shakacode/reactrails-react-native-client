@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { ListView, Text } from 'react-native';
+import { ListView } from 'react-native';
 
 import Comment from '../Comment/Comment';
 
@@ -9,6 +9,12 @@ export default class Comments extends Component {
     super(props);
     const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = { dataSource: ds.cloneWithRows(this.props.comments) };
+    this.props.actions.fetchComments();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+    this.setState({ dataSource: ds.cloneWithRows(nextProps.comments) });
   }
 
   render() {
