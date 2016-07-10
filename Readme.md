@@ -1,5 +1,6 @@
 ## React Native Tutorial
-This is a simple "Hello world" app in React Native.
+This tutorial shows how to connect to the the reactrails.com API for a sample microblog.
+Please see https://github.com/shakacode/react-webpack-rails-tutorial for more information on the back end.
 
 ### Setup
 1. Install the latest version of Xcode from AppStore or https://developer.apple.com/download/ (Apple ID required)
