@@ -1,7 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
-
-const $blue = '#0000FF';
-const $black = '#000000';
+import { $paddingTop } from '../../constants/platform';
+import * as colors from '../../constants/colors';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -9,7 +8,7 @@ const indicatorSize = 36;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 20,
+    paddingTop: 20 + $paddingTop,
     paddingBottom: 20,
     paddingRight: 20,
     paddingLeft: 20,
@@ -22,15 +21,23 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   refresh: {
-    color: $blue,
+    color: colors.$blue,
     fontSize: 25,
     margin: 10,
   },
   refreshContainer: {
     flexDirection: 'column',
     alignItems: 'center',
-    borderBottomColor: $black,
+    borderBottomColor: colors.$black,
     borderBottomWidth: 1,
+  },
+  errorContainer: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: 5,
+  },
+  error: {
+    color: colors.$red,
   },
 });
 

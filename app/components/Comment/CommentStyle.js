@@ -1,22 +1,20 @@
 import { StyleSheet } from 'react-native';
-const $black = '#000000';
-const $gray = '#999999';
-const $purple = '#800080';
+import * as colors from '../../constants/colors';
 
 const styles = StyleSheet.create({
   container: {
     height: 75,
     padding: 10,
     borderBottomWidth: 1,
-    borderBottomColor: $gray,
+    borderBottomColor: colors.$gray,
   },
   author: {
     fontSize: 20,
-    color: $purple,
+    color: colors.$purple,
   },
   text: {
     fontSize: 15,
-    color: $black,
+    color: colors.$black,
   },
 });
 

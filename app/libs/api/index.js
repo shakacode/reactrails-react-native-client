@@ -8,7 +8,7 @@ export default {
    * @returns {Promise} - Result of ajax call.
    */
   fetchEntities() {
-    return fetch(API_URL);
+    return fetch(API_URL, { timeout: 3 });
   },
 
   /**
