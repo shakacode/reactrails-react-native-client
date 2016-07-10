@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-const $blue = '#0000FF';
+const $black = '#000000';
 const $gray = '#999999';
 const $purple = '#800080';
 
@@ -12,11 +12,11 @@ const styles = StyleSheet.create({
   },
   author: {
     fontSize: 20,
-    color: $blue,
+    color: $purple,
   },
   text: {
     fontSize: 15,
-    color: $purple,
+    color: $black,
   },
 });
 

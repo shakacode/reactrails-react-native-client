@@ -1,5 +1,13 @@
 import React, { Component, PropTypes } from 'react';
-import { View, ListView, ActivityIndicator } from 'react-native';
+import {
+  View,
+  ListView,
+  ActivityIndicator,
+  TouchableNativeFeedback,
+  TouchableHighlight,
+  Platform,
+  Text,
+ } from 'react-native';
 
 import Comment from '../Comment/Comment';
 import styles from './CommentsStyle';
@@ -20,12 +28,23 @@ export default class Comments extends Component {
   }
 
   render() {
+    const TouchableElement = Platform.OS === 'android' ?
+      TouchableNativeFeedback :
+      TouchableHighlight;
     return (
-      <View>
+      <View style={styles.container}>
+        <View style={styles.refreshContainer}>
+          <TouchableElement
+            onPress={() => this.props.actions.fetchComments()}
+          >
+            <View>
+              <Text style={styles.refresh}>Reload</Text>
+            </View>
+          </TouchableElement>
+        </View>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={(comment) => <Comment {...comment} />}
-          style={styles.container}
           enableEmptySections
         />
         <ActivityIndicator
