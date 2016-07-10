@@ -2,6 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 const $blue = '#0000FF';
 const $black = '#000000';
+const $red = '#FF0000';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -31,6 +32,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderBottomColor: $black,
     borderBottomWidth: 1,
+  },
+  errorContainer: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: 5,
+  },
+  error: {
+    color: $red,
   },
 });
 

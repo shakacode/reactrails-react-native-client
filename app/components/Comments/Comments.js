@@ -26,6 +26,12 @@ export default class Comments extends Component {
     this.setState({ dataSource: ds.cloneWithRows(nextProps.comments) });
   }
 
+  renderError() {
+    return this.props.fetchCommentError ?
+      <Text style={styles.error}>{this.props.fetchCommentError}</Text> :
+      null;
+  }
+
   render() {
     const TouchableElement = Platform.OS === 'android' ?
       TouchableNativeFeedback :
@@ -40,6 +46,9 @@ export default class Comments extends Component {
               <Text style={styles.refresh}>Reload</Text>
             </View>
           </TouchableElement>
+        </View>
+        <View style={styles.errorContainer}>
+          {this.renderError()}
         </View>
         <ListView
           dataSource={this.state.dataSource}
@@ -60,6 +69,7 @@ export default class Comments extends Component {
 Comments.propTypes = {
   comments: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
+  fetchCommentError: PropTypes.string,
   actions: PropTypes.shape({
     fetchComments: PropTypes.func.isRequired,
   }),

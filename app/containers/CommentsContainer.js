@@ -12,6 +12,8 @@ const CommentsContainer = (props) => (
 const mapStateToProps = state => ({
   comments: state.$$commentsStore.get('$$comments').toJS(),
   isFetching: state.$$commentsStore.get('isFetching'),
+  fetchCommentError: state.$$commentsStore.get('fetchCommentError') &&
+    state.$$commentsStore.get('fetchCommentError').message,
 });
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(commentsActions, dispatch) });
 
