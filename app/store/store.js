@@ -3,12 +3,11 @@ import thunkMiddleware from 'redux-thunk';
 import loggerMiddleware from '../libs/middlewares/loggerMiddleware';
 import reducers, { initialStates } from '../reducers';
 
-export default props => {
-  const initialComments = props.comments;
+export default () => {
   const { $$commentsState } = initialStates;
   const initialState = {
     $$commentsStore: $$commentsState.merge({
-      $$comments: initialComments,
+      $$comments: [{ author: 'Randy', text: 'row1' }, { author: 'Sheila', text: 'row2' }],
     }),
   };
 

@@ -2,13 +2,14 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import createStore from './store/store';
-import Comments from './components/Comments/Comments';
+import CommentsContainer from './containers/CommentsContainer';
 
-export default props => {
-  const store = createStore(props);
+export default () => {
+  const store = createStore();
+  console.log(store);
   return (
     <Provider store={store}>
-      <Comments comments={[{ author: 'Randy', text: 'row1' }, { author: 'Sheila', text: 'row2' }]} />
+      <CommentsContainer />
     </Provider>
   );
 };
