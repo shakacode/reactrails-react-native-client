@@ -1,13 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import styles from './AppStyle';
+import { Provider } from 'react-redux';
 
-const App = () => (
-  <View style={styles.container}>
-    <Text style={styles.welcome}>
-      Welcome to React Native!
-    </Text>
-  </View>
-);
+import createStore from './store/store';
+import HelloWorld from './components/HelloWorld';
 
-export default App;
+export default props => {
+  const store = createStore(props);
+  return (
+    <Provider store={store}>
+      <HelloWorld />
+    </Provider>
+  );
+};
