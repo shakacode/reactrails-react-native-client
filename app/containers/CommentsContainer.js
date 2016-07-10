@@ -9,7 +9,10 @@ const CommentsContainer = (props) => (
   <Comments {...props} />
 );
 
-const mapStateToProps = state => ({ comments: state.$$commentsStore.get('$$comments').toJS() });
+const mapStateToProps = state => ({
+  comments: state.$$commentsStore.get('$$comments').toJS(),
+  isFetching: state.$$commentsStore.get('isFetching'),
+});
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(commentsActions, dispatch) });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentsContainer);

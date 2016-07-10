@@ -7,7 +7,7 @@ export default () => {
   const { $$commentsState } = initialStates;
   const initialState = {
     $$commentsStore: $$commentsState.merge({
-      $$comments: [{ author: 'Randy', text: 'row1' }, { author: 'Sheila', text: 'row2' }],
+      $$comments: [],
     }),
   };
 
