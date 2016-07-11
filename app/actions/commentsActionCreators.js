@@ -1,33 +1,45 @@
 import api from '../libs/api';
 import * as actionTypes from '../constants/commentsConstants';
 
-export const setIsFetching = () => ({
-  type: actionTypes.SET_IS_FETCHING,
-});
+export function setIsFetching() {
+  return {
+    type: actionTypes.SET_IS_FETCHING,
+  };
+}
 
-export const setIsSaving = () => ({
-  type: actionTypes.SET_IS_SAVING,
-});
+export function setIsSaving() {
+  return {
+    type: actionTypes.SET_IS_SAVING,
+  };
+}
 
-export const fetchCommentsSuccess = (data) => ({
-  type: actionTypes.FETCH_COMMENTS_SUCCESS,
-  comments: data.comments,
-});
+export function fetchCommentsSuccess(data) {
+  return {
+    type: actionTypes.FETCH_COMMENTS_SUCCESS,
+    comments: data.comments,
+  };
+}
 
-export const fetchCommentsFailure = (error) => ({
-  type: actionTypes.FETCH_COMMENTS_FAILURE,
-  error,
-});
+export function fetchCommentsFailure(error) {
+  return {
+    type: actionTypes.FETCH_COMMENTS_FAILURE,
+    error,
+  };
+}
 
-export const submitCommentSuccess = (comment) => ({
-  type: actionTypes.SUBMIT_COMMENT_SUCCESS,
-  comment,
-});
+export function submitCommentSuccess(comment) {
+  return {
+    type: actionTypes.SUBMIT_COMMENT_SUCCESS,
+    comment,
+  };
+}
 
-export const submitCommentFailure = (error) => ({
-  type: actionTypes.SUBMIT_COMMENT_FAILURE,
-  error,
-});
+export function submitCommentFailure(error) {
+  return {
+    type: actionTypes.SUBMIT_COMMENT_FAILURE,
+    error,
+  };
+}
 
 export function fetchComments() {
   return dispatch => {
