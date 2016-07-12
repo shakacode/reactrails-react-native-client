@@ -1,45 +1,17 @@
 import api from '../libs/api';
 import * as actionTypes from '../constants/commentsConstants';
+import * as reduxUtils from '../libs/utils/redux';
 
-export function setIsFetching() {
-  return {
-    type: actionTypes.SET_IS_FETCHING,
-  };
-}
-
-export function setIsSaving() {
-  return {
-    type: actionTypes.SET_IS_SAVING,
-  };
-}
-
-export function fetchCommentsSuccess(data) {
-  return {
-    type: actionTypes.FETCH_COMMENTS_SUCCESS,
-    comments: data.comments,
-  };
-}
-
-export function fetchCommentsFailure(error) {
-  return {
-    type: actionTypes.FETCH_COMMENTS_FAILURE,
-    error,
-  };
-}
-
-export function submitCommentSuccess(comment) {
-  return {
-    type: actionTypes.SUBMIT_COMMENT_SUCCESS,
-    comment,
-  };
-}
-
-export function submitCommentFailure(error) {
-  return {
-    type: actionTypes.SUBMIT_COMMENT_FAILURE,
-    error,
-  };
-}
+export const setIsFetching = reduxUtils.makeActionCreator(actionTypes.SET_IS_FETCHING);
+export const setIsSaving = reduxUtils.makeActionCreator(actionTypes.SET_IS_SAVING);
+export const fetchCommentsSuccess =
+  reduxUtils.makeActionCreator(actionTypes.FETCH_COMMENTS_SUCCESS, 'comments');
+export const fetchCommentsFailure =
+  reduxUtils.makeActionCreator(actionTypes.FETCH_COMMENTS_FAILURE, 'error');
+export const submitCommentSuccess =
+  reduxUtils.makeActionCreator(actionTypes.SUBMIT_COMMENT_SUCCESS, 'comment');
+export const submitCommentFailure =
+    reduxUtils.makeActionCreator(actionTypes.SUBMIT_COMMENT_SUCCESS, 'error');
 
 export function fetchComments() {
   return dispatch => {
@@ -48,7 +20,7 @@ export function fetchComments() {
       api
         .fetchEntities()
         .then(response => response.json())
-        .then(json => dispatch(fetchCommentsSuccess(json)))
+        .then(json => dispatch(fetchCommentsSuccess(json.comments)))
         .catch(error => dispatch(fetchCommentsFailure(error)))
     );
   };
