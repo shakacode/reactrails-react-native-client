@@ -4,17 +4,14 @@ import loggerMiddleware from '../libs/middlewares/loggerMiddleware';
 import reducers, { initialStates } from '../reducers';
 
 export default () => {
-  const { $$commentsState } = initialStates;
   const initialState = {
-    $$commentsStore: $$commentsState.merge({
-      $$comments: [],
-    }),
+    $$commentsStore: initialStates.$$commentsState,
   };
 
   const reducer = combineReducers(reducers);
-  const composedStore = compose(
-    applyMiddleware(thunkMiddleware, loggerMiddleware)
-  );
+  const composedStore = __DEV__ ?
+    compose(applyMiddleware(thunkMiddleware, loggerMiddleware)) :
+    compose(applyMiddleware(thunkMiddleware));
 
   return composedStore(createStore)(reducer, initialState);
 };
