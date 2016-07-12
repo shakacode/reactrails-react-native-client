@@ -1,7 +1,10 @@
 import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
-import thunkMiddleware from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
+import _ from 'lodash/fp';
+
 import loggerMiddleware from '../libs/middlewares/loggerMiddleware';
 import reducers, { initialStates } from '../reducers';
+import sagas from '../sagas';
 
 export default () => {
   const initialState = {
@@ -9,9 +12,12 @@ export default () => {
   };
 
   const reducer = combineReducers(reducers);
+  const sagaMiddleware = createSagaMiddleware();
   const composedStore = __DEV__ ?
-    compose(applyMiddleware(thunkMiddleware, loggerMiddleware)) :
-    compose(applyMiddleware(thunkMiddleware));
+    compose(applyMiddleware(sagaMiddleware, loggerMiddleware)) :
+    compose(applyMiddleware(sagaMiddleware));
+  const store = composedStore(createStore)(reducer, initialState);
+  _.each(saga => sagaMiddleware.run(saga))(sagas);
 
-  return composedStore(createStore)(reducer, initialState);
+  return store;
 };

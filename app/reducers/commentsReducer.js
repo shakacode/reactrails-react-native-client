@@ -50,13 +50,13 @@ export const commentsHandlers = {
     });
   },
 
-  [actionTypes.SET_IS_FETCHING]($$state: $$Map) {
+  [actionTypes.FETCH_COMMENTS_REQUEST]($$state: $$Map) {
     return $$state.merge({
       isFetching: true,
     });
   },
 
-  [actionTypes.SET_IS_SAVING]($$state: $$Map) {
+  [actionTypes.SUBMIT_COMMENT_REQUEST]($$state: $$Map) {
     return $$state.merge({
       isFetching: false,
     });
