@@ -1,6 +1,7 @@
 /* eslint new-cap: 0 */
 
-import Immutable from 'immutable';
+import Immutable, { Map as $$Map } from 'immutable';
+import { createReducer } from '../libs/utils/redux';
 
 import * as actionTypes from '../constants/commentsConstants';
 
@@ -12,61 +13,55 @@ export const $$initialState = Immutable.fromJS({
   isSaving: false,
 });
 
-export default function commentsReducer($$state = $$initialState, action = null) {
-  const { type, comment, comments, error } = action;
+export const commentsHandlers = {
+  [actionTypes.FETCH_COMMENTS_SUCCESS]($$state: $$Map, action: { comments: Object }) {
+    return $$state.merge({
+      $$comments: action.comments,
+      fetchCommentError: null,
+      isFetching: false,
+    });
+  },
 
-  switch (type) {
+  [actionTypes.FETCH_COMMENTS_FAILURE]($$state: $$Map, action: { error: String }) {
+    return $$state.merge({
+      fetchCommentError: action.error,
+      isFetching: false,
+    });
+  },
 
-    case actionTypes.FETCH_COMMENTS_SUCCESS: {
-      return $$state.merge({
-        $$comments: comments,
-        fetchCommentError: null,
-        isFetching: false,
-      });
-    }
+  [actionTypes.SUBMIT_COMMENT_SUCCESS]($$state: $$Map, action: { comment: String }) {
+    return $$state.withMutations(state => (
+      state
+        .updateIn(
+          ['$$comments'],
+          $$comments => $$comments.unshift(Immutable.fromJS(action.comment))
+        )
+        .merge({
+          submitCommentError: null,
+          isSaving: false,
+        })
+    ));
+  },
 
-    case actionTypes.FETCH_COMMENTS_FAILURE: {
-      return $$state.merge({
-        fetchCommentError: error,
-        isFetching: false,
-      });
-    }
+  [actionTypes.SUBMIT_COMMENT_FAILURE]($$state: $$Map, action: { error: String }) {
+    return $$state.merge({
+      fetchCommentError: action.error,
+      isFetching: false,
+    });
+  },
 
-    case actionTypes.SUBMIT_COMMENT_SUCCESS: {
-      return $$state.withMutations(state => (
-        state
-          .updateIn(
-            ['$$comments'],
-            $$comments => $$comments.unshift(Immutable.fromJS(comment))
-          )
-          .merge({
-            submitCommentError: null,
-            isSaving: false,
-          })
-      ));
-    }
+  [actionTypes.SET_IS_FETCHING]($$state: $$Map) {
+    return $$state.merge({
+      isFetching: true,
+    });
+  },
 
-    case actionTypes.SUBMIT_COMMENT_FAILURE: {
-      return $$state.merge({
-        submitCommentError: error,
-        isSaving: false,
-      });
-    }
+  [actionTypes.SET_IS_SAVING]($$state: $$Map) {
+    return $$state.merge({
+      isFetching: false,
+    });
+  },
+};
 
-    case actionTypes.SET_IS_FETCHING: {
-      return $$state.merge({
-        isFetching: true,
-      });
-    }
-
-    case actionTypes.SET_IS_SAVING: {
-      return $$state.merge({
-        isSaving: true,
-      });
-    }
-
-    default: {
-      return $$state;
-    }
-  }
-}
+const commentsReducer = createReducer($$initialState, commentsHandlers);
+export default commentsReducer;
