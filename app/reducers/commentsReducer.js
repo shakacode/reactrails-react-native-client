@@ -53,13 +53,13 @@ export default function commentsReducer($$state = $$initialState, action = null)
       });
     }
 
-    case actionTypes.SET_IS_FETCHING: {
+    case actionTypes.FETCH_COMMENTS_REQUEST: {
       return $$state.merge({
         isFetching: true,
       });
     }
 
-    case actionTypes.SET_IS_SAVING: {
+    case actionTypes.SUBMIT_COMMENT_REQUEST: {
       return $$state.merge({
         isSaving: true,
       });
