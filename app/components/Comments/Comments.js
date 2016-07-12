@@ -17,7 +17,7 @@ export default class Comments extends Component {
   constructor(props) {
     super(props);
     const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    this.state = { dataSource: ds.cloneWithRows(this.props.comments) };
+    this.state = { dataSource: ds.cloneWithRows(props.comments) };
   }
 
   componentDidMount() {
