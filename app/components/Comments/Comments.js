@@ -17,8 +17,11 @@ export default class Comments extends Component {
   constructor(props) {
     super(props);
     const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    this.state = { dataSource: ds.cloneWithRows(this.props.comments) };
-    this.props.actions.fetchComments();
+    this.state = { dataSource: ds.cloneWithRows(props.comments) };
+  }
+
+  componentDidMount() {
+    this.props.actions.fetchCommentsRequest();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -40,7 +43,7 @@ export default class Comments extends Component {
       <View style={styles.container}>
         <View style={styles.refreshContainer}>
           <TouchableElement
-            onPress={() => this.props.actions.fetchComments()}
+            onPress={() => this.props.actions.fetchCommentsRequest()}
           >
             <View>
               <Text style={styles.refresh}>Reload</Text>
@@ -71,6 +74,6 @@ Comments.propTypes = {
   isFetching: PropTypes.bool.isRequired,
   fetchCommentError: PropTypes.string,
   actions: PropTypes.shape({
-    fetchComments: PropTypes.func.isRequired,
+    fetchCommentsRequest: PropTypes.func.isRequired,
   }),
 };
