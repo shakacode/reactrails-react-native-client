@@ -3,7 +3,7 @@ import { call, put } from 'redux-saga/effects';
 import api from '../libs/api';
 import * as actionTypes from '../constants/commentsConstants';
 
-function* fetchComments() {
+export function* fetchComments() {
   try {
     const responsePromise = yield call(api.fetchEntities);
     const { comments } = yield call(() => responsePromise.json());

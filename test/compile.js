@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const babel = require('babel-core');
+require('babel-polyfill');
 const origJS = require.extensions['.js'];
 
 require.extensions['.js'] = (module, _filename) => {
