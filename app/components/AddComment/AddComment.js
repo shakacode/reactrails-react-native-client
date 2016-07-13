@@ -16,12 +16,14 @@ const AddComment = (props) => (
     <Text>Author</Text>
     <TextInput
       onChangeText={(text) => props.updateState({ author: text })}
-      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+      value={props.getState().author}
+      style={styles.input}
     />
     <Text>Comment</Text>
     <TextInput
       onChangeText={(text) => props.updateState({ comment: text })}
-      style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+      value={props.getState().comment}
+      style={styles.input}
     />
 
   </View>
@@ -31,6 +33,7 @@ AddComment.propTypes = {
   addComment: PropTypes.func.isRequired,
   cancel: PropTypes.func.isRequired,
   updateState: PropTypes.func.isRequired,
+  getState: PropTypes.func.isRequired,
 };
 
 export default _.compose(withFormState, withAddCommentHandlers)(AddComment);

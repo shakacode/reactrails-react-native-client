@@ -36,7 +36,7 @@ const Comments = (props) => (
       renderRow={(comment) => <Comment {...comment} />}
       enableEmptySections
     />
-{console.log(props)}
+
     <ActivityIndicator
       size="large"
       color="#0000ff"

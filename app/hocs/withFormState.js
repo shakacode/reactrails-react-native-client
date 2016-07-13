@@ -10,7 +10,7 @@ const withFormState = Component => class extends React.Component {
   }
 
   updateState(value) {
-    this.setState({ ...value, ...this.state });
+    this.setState({ ...this.state, ...value });
   }
 
   resetState() {

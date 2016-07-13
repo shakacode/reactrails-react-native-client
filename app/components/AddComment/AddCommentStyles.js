@@ -18,6 +18,13 @@ const styles = StyleSheet.create({
     borderBottomColor: colors.$black,
     borderBottomWidth: 1,
   },
+
+  input: {
+    height: 40,
+    padding: 10,
+    borderColor: colors.$gray,
+    borderWidth: 1,
+  },
 });
 
 export default styles;
