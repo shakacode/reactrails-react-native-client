@@ -2,17 +2,12 @@ import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import AppNavigator from './AppNavigator';
 import * as commentsActions from '../actions/commentsActionCreators';
-import Comments from '../components/Comments/Comments';
 
-const CommentsContainer = (props) => (
-  <Comments
-    {...props}
-    remoteDataSourceFetch={props.actions.fetchCommentsRequest}
-  />
-);
+const ReduxContainer = (props) => <AppNavigator {...props} />;
 
-CommentsContainer.propTypes = {
+ReduxContainer.propTypes = {
   isFetching: PropTypes.bool.isRequired,
   fetchCommentsError: PropTypes.string,
   actions: PropTypes.shape({
@@ -27,4 +22,4 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(commentsActions, dispatch) });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CommentsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ReduxContainer);

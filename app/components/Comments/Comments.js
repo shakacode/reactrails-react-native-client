@@ -10,6 +10,7 @@ import _ from 'lodash/fp';
 import Comment from '../Comment/Comment';
 import Button from '../Button/Button';
 import withRemoteDataSource from '../../hocs/withRemoteDataSource';
+import routes from '../../constants/routes';
 import styles from './CommentsStyle';
 
 const Comments = (props) => (
@@ -23,7 +24,7 @@ const Comments = (props) => (
         </View>
       </Button>
       <Button
-        onPress={() => this.showModal()}
+        onPress={() => props.navigator.push({ path: routes.ADD_COMMENT })}
       >
         <View>
           <Text style={styles.refresh}>Add Comment</Text>
@@ -58,6 +59,7 @@ Comments.propTypes = {
   isFetching: PropTypes.bool.isRequired,
   fetchCommentError: PropTypes.string,
   dataSource: PropTypes.object.isRequired,
+  navigator: PropTypes.object.isRequired,
   remoteDataSourceFetch: PropTypes.func.isRequired,
 };
 
