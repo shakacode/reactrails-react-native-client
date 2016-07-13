@@ -9,7 +9,7 @@ const ReduxContainer = (props) => <AppNavigator {...props} />;
 
 ReduxContainer.propTypes = {
   isFetching: PropTypes.bool.isRequired,
-  fetchCommentsError: PropTypes.string,
+  fetchCommentError: PropTypes.string,
   actions: PropTypes.shape({
     fetchCommentsRequest: PropTypes.func.isRequired,
   }),
@@ -18,7 +18,8 @@ ReduxContainer.propTypes = {
 const mapStateToProps = state => ({
   comments: state.$$commentsStore.get('$$comments').toJS(),
   isFetching: state.$$commentsStore.get('isFetching'),
-  fetchCommentError: state.$$commentsStore.get('fetchCommentsError'),
+  isSaving: state.$$commentsStore.get('isSaving'),
+  fetchCommentError: state.$$commentsStore.get('fetchCommentError'),
 });
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(commentsActions, dispatch) });
 

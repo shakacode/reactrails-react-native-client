@@ -25,7 +25,6 @@ const Comments = (props) => (
         text="Add Comment"
       />
     </View>
-
     <View style={styles.errorContainer}>
       {props.fetchCommentError ?
         <Text style={styles.error}>{props.fetchCommentError}</Text> :
@@ -37,12 +36,12 @@ const Comments = (props) => (
       renderRow={(comment) => <Comment {...comment} />}
       enableEmptySections
     />
-
+{console.log(props)}
     <ActivityIndicator
       size="large"
       color="#0000ff"
       style={styles.indicator}
-      animating={props.isFetching}
+      animating={props.isFetching || props.isSaving}
     />
 
   </View>
@@ -51,6 +50,7 @@ const Comments = (props) => (
 Comments.propTypes = {
   comments: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
+  isSaving: PropTypes.bool.isRequired,
   fetchCommentError: PropTypes.string,
   dataSource: PropTypes.object.isRequired,
   navigator: PropTypes.object.isRequired,

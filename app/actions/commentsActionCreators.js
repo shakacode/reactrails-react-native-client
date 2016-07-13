@@ -5,7 +5,7 @@ export const fetchCommentsRequest =
   reduxUtils.makeActionCreator(actionTypes.FETCH_COMMENTS_REQUEST);
 
 export const submitCommentRequest =
-  reduxUtils.makeActionCreator(actionTypes.SUBMIT_COMMENT_REQUEST);
+  reduxUtils.makeActionCreator(actionTypes.SUBMIT_COMMENT_REQUEST, 'comment');
 
 export const fetchCommentsSuccess =
   reduxUtils.makeActionCreator(actionTypes.FETCH_COMMENTS_SUCCESS, 'comments');

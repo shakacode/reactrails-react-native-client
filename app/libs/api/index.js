@@ -19,12 +19,11 @@ export default {
    */
   //  Todo: add CSRF api.
   submitEntity(entity) {
-    return fetch({
+    return fetch(API_URL, {
       method: 'POST',
-      url: API_URL,
-      responseType: 'json',
       headers: {
-        'X-CSRF-Token': 'TODO',
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
       data: entity,
     });

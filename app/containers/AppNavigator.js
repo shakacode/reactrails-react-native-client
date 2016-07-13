@@ -24,7 +24,7 @@ export default class AppNavigator extends Component {
           />
         );
       case routes.ADD_COMMENT:
-        return <AddComment navigator={navigator} />;
+        return <AddComment navigator={navigator} {...this.props} />;
       default:
         return null;
     }

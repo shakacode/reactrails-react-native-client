@@ -46,7 +46,7 @@ export const commentsHandlers = {
   [actionTypes.SUBMIT_COMMENT_FAILURE]($$state: $$Map, action: { error: String }) {
     return $$state.merge({
       fetchCommentError: action.error,
-      isFetching: false,
+      isSaving: false,
     });
   },
 
@@ -58,7 +58,7 @@ export const commentsHandlers = {
 
   [actionTypes.SUBMIT_COMMENT_REQUEST]($$state: $$Map) {
     return $$state.merge({
-      isFetching: false,
+      isSaving: true,
     });
   },
 };
