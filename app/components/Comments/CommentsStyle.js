@@ -20,14 +20,10 @@ const styles = StyleSheet.create({
     top: height / 2 - indicatorSize / 2,
     padding: 8,
   },
-  refresh: {
-    color: colors.$blue,
-    fontSize: 25,
-    margin: 10,
-  },
   refreshContainer: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     borderBottomColor: colors.$black,
     borderBottomWidth: 1,
   },

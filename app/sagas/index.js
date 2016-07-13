@@ -1,3 +1,4 @@
 import fetchComments from './fetchComments';
+import submitComment from './submitComment';
 
-export default { fetchComments };
+export default { fetchComments, submitComment };

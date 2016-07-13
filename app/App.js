@@ -2,13 +2,13 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import createStore from './store/store';
-import CommentsContainer from './containers/CommentsContainer';
+import ReduxContainer from './containers/ReduxContainer';
 
 export default () => {
   const store = createStore();
   return (
     <Provider store={store}>
-      <CommentsContainer />
+      <ReduxContainer />
     </Provider>
   );
 };

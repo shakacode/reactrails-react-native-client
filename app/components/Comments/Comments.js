@@ -1,79 +1,60 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import {
   View,
   ListView,
   ActivityIndicator,
-  TouchableNativeFeedback,
-  TouchableHighlight,
-  Platform,
   Text,
  } from 'react-native';
+import _ from 'lodash/fp';
 
 import Comment from '../Comment/Comment';
+import Button from '../Button/Button';
+import withRemoteDataSource from '../../hocs/withRemoteDataSource';
+import routes from '../../constants/routes';
 import styles from './CommentsStyle';
 
-export default class Comments extends Component {
+const Comments = (props) => (
+  <View style={styles.container}>
+    <View style={styles.refreshContainer}>
+      <Button
+        onPress={() => props.remoteDataSourceFetch()}
+        text="Reload"
+      />
+      <Button
+        onPress={() => props.navigator.push({ path: routes.ADD_COMMENT })}
+        text="Add Comment"
+      />
+    </View>
+    <View style={styles.errorContainer}>
+      {props.fetchCommentError ?
+        <Text style={styles.error}>{props.fetchCommentError}</Text> :
+        null}
+    </View>
 
-  constructor(props) {
-    super(props);
-    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    this.state = { dataSource: ds.cloneWithRows(props.comments) };
-  }
+    <ListView
+      dataSource={props.dataSource}
+      renderRow={(comment) => <Comment {...comment} />}
+      enableEmptySections
+    />
 
-  componentDidMount() {
-    this.props.actions.fetchCommentsRequest();
-  }
+    <ActivityIndicator
+      size="large"
+      color="#0000ff"
+      style={styles.indicator}
+      animating={props.isFetching || props.isSaving}
+    />
 
-  componentWillReceiveProps(nextProps) {
-    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    this.setState({ dataSource: ds.cloneWithRows(nextProps.comments) });
-  }
-
-  renderError() {
-    return this.props.fetchCommentError ?
-      <Text style={styles.error}>{this.props.fetchCommentError}</Text> :
-      null;
-  }
-
-  render() {
-    const TouchableElement = Platform.OS === 'android' ?
-      TouchableNativeFeedback :
-      TouchableHighlight;
-    return (
-      <View style={styles.container}>
-        <View style={styles.refreshContainer}>
-          <TouchableElement
-            onPress={() => this.props.actions.fetchCommentsRequest()}
-          >
-            <View>
-              <Text style={styles.refresh}>Reload</Text>
-            </View>
-          </TouchableElement>
-        </View>
-        <View style={styles.errorContainer}>
-          {this.renderError()}
-        </View>
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={(comment) => <Comment {...comment} />}
-          enableEmptySections
-        />
-        <ActivityIndicator
-          size="large"
-          color="#0000ff"
-          style={styles.indicator}
-          animating={this.props.isFetching}
-        />
-      </View>
-    );
-  }
-}
+  </View>
+);
 
 Comments.propTypes = {
   comments: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
+  isSaving: PropTypes.bool.isRequired,
   fetchCommentError: PropTypes.string,
-  actions: PropTypes.shape({
-    fetchCommentsRequest: PropTypes.func.isRequired,
-  }),
+  dataSource: PropTypes.object.isRequired,
+  navigator: PropTypes.object.isRequired,
+  remoteDataSourceFetch: PropTypes.func.isRequired,
 };
+
+export default withRemoteDataSource(_.get('comments'))(Comments);
