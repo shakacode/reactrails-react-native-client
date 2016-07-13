@@ -26,8 +26,9 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   refreshContainer: {
-    flexDirection: 'column',
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     borderBottomColor: colors.$black,
     borderBottomWidth: 1,
   },

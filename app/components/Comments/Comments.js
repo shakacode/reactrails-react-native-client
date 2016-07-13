@@ -3,13 +3,11 @@ import {
   View,
   ListView,
   ActivityIndicator,
-  TouchableNativeFeedback,
-  TouchableHighlight,
-  Platform,
   Text,
  } from 'react-native';
 
 import Comment from '../Comment/Comment';
+import Button from '../Button/Button';
 import styles from './CommentsStyle';
 
 export default class Comments extends Component {
@@ -35,20 +33,29 @@ export default class Comments extends Component {
       null;
   }
 
+  showModal() {
+
+  }
+
   render() {
-    const TouchableElement = Platform.OS === 'android' ?
-      TouchableNativeFeedback :
-      TouchableHighlight;
     return (
       <View style={styles.container}>
         <View style={styles.refreshContainer}>
-          <TouchableElement
+          <Button
             onPress={() => this.props.actions.fetchCommentsRequest()}
           >
             <View>
               <Text style={styles.refresh}>Reload</Text>
             </View>
-          </TouchableElement>
+          </Button>
+          <Button
+            onPress={() => this.showModal()}
+          >
+            <View>
+              <Text style={styles.refresh}>Add Comment</Text>
+            </View>
+          </Button>
+
         </View>
         <View style={styles.errorContainer}>
           {this.renderError()}
