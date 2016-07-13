@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -6,13 +6,24 @@ import * as commentsActions from '../actions/commentsActionCreators';
 import Comments from '../components/Comments/Comments';
 
 const CommentsContainer = (props) => (
-  <Comments {...props} />
+  <Comments
+    {...props}
+    remoteDataSourceFetch={props.actions.fetchCommentsRequest}
+  />
 );
+
+CommentsContainer.propTypes = {
+  isFetching: PropTypes.bool.isRequired,
+  fetchCommentsError: PropTypes.string,
+  actions: PropTypes.shape({
+    fetchCommentsRequest: PropTypes.func.isRequired,
+  }),
+};
 
 const mapStateToProps = state => ({
   comments: state.$$commentsStore.get('$$comments').toJS(),
   isFetching: state.$$commentsStore.get('isFetching'),
-  fetchCommentError: state.$$commentsStore.get('fetchCommentError'),
+  fetchCommentError: state.$$commentsStore.get('fetchCommentsError'),
 });
 const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(commentsActions, dispatch) });
 
