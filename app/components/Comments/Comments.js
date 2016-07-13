@@ -18,19 +18,12 @@ const Comments = (props) => (
     <View style={styles.refreshContainer}>
       <Button
         onPress={() => props.remoteDataSourceFetch()}
-      >
-        <View>
-          <Text style={styles.refresh}>Reload</Text>
-        </View>
-      </Button>
+        text="Reload"
+      />
       <Button
         onPress={() => props.navigator.push({ path: routes.ADD_COMMENT })}
-      >
-        <View>
-          <Text style={styles.refresh}>Add Comment</Text>
-        </View>
-      </Button>
-
+        text="Add Comment"
+      />
     </View>
 
     <View style={styles.errorContainer}>
@@ -51,6 +44,7 @@ const Comments = (props) => (
       style={styles.indicator}
       animating={props.isFetching}
     />
+
   </View>
 );
 

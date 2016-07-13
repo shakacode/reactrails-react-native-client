@@ -20,11 +20,6 @@ const styles = StyleSheet.create({
     top: height / 2 - indicatorSize / 2,
     padding: 8,
   },
-  refresh: {
-    color: colors.$blue,
-    fontSize: 25,
-    margin: 10,
-  },
   refreshContainer: {
     flexDirection: 'row',
     alignItems: 'center',
