@@ -1,7 +1,7 @@
 import { takeLatest } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 import api from 'ReactNativeTutorial/app/libs/api';
-import * as actionTypes from 'ReactNativeTutorial/app/constants/commentsConstants';
+import actionTypes from 'ReactNativeTutorial/app/constants/commentsConstants';
 
 export function* fetchComments() {
   try {

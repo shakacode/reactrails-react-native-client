@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { fetchComments } from '../../app/sagas/fetchComments';
-import * as actionTypes from '../../app/constants/commentsConstants';
+import actionTypes from '../../app/constants/commentsConstants';
 import { put } from 'redux-saga/effects';
 
 describe('fetchComments', () => {

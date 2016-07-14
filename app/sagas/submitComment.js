@@ -1,13 +1,17 @@
 import { takeEvery } from 'redux-saga';
 import { call, put } from 'redux-saga/effects';
 import api from 'ReactNativeTutorial/app/libs/api';
-import * as actionTypes from 'ReactNativeTutorial/app/constants/commentsConstants';
+import actionTypes from 'ReactNativeTutorial/app/constants/commentsConstants';
+import errors from '../constants/errors';
 
 export function* submitComment(action) {
   try {
     const responsePromise = yield call(() => api.submitEntity({ comment: action.comment }));
-    const { comment, error } = yield call(() => responsePromise.json());
-    if (error) throw error;
+    const comment = yield call(() => responsePromise.json());
+    if (comment.error) throw comment.error;
+    if (!comment.hasOwnProperty('author') || !comment.hasOwnProperty('text')) {
+      throw errors.UNEXPECTED_SERVER_RESPONSE;
+    }
     yield put({ type: actionTypes.SUBMIT_COMMENT_SUCCESS, comment });
   } catch (e) {
     yield put({ type: actionTypes.SUBMIT_COMMENT_FAILURE, error: e.message || e });

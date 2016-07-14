@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import { submitComment } from '../../app/sagas/submitComment';
-import * as actionTypes from '../../app/constants/commentsConstants';
+import actionTypes from '../../app/constants/commentsConstants';
 import { put } from 'redux-saga/effects';
 
 describe('submitComment', () => {
@@ -8,11 +8,8 @@ describe('submitComment', () => {
     it('calls SUBMIT_COMMENTS_SUCCESS with a saved comment', () => {
       const iterator = submitComment();
       const response = {
-        comment:
-        {
-          author: 'Dave',
-          comment: 'Hi',
-        },
+        author: 'Dave',
+        text: 'Hi',
       };
       iterator.next();
       iterator.next();
@@ -20,7 +17,7 @@ describe('submitComment', () => {
       expect(effect).to.deep.equal(
         put({
           type: actionTypes.SUBMIT_COMMENT_SUCCESS,
-          comment: response.comment,
+          comment: response,
         })
       );
     });
