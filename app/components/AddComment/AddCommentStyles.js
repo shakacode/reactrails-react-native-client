@@ -25,6 +25,15 @@ const styles = StyleSheet.create({
     borderColor: colors.$gray,
     borderWidth: 1,
   },
+
+  errorContainer: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: 5,
+  },
+  error: {
+    color: colors.$red,
+  },
 });
 
 export default styles;

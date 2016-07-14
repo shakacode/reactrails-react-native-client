@@ -1,4 +1,4 @@
-import * as actionTypes from '../constants/commentsConstants';
+import actionTypes from '../constants/commentsConstants';
 import * as reduxUtils from '../libs/utils/redux';
 
 export const fetchCommentsRequest =
@@ -6,6 +6,9 @@ export const fetchCommentsRequest =
 
 export const submitCommentRequest =
   reduxUtils.makeActionCreator(actionTypes.SUBMIT_COMMENT_REQUEST, 'comment');
+
+export const resetErrorState =
+  reduxUtils.makeActionCreator(actionTypes.RESET_ERROR_STATE);
 
 export const fetchCommentsSuccess =
   reduxUtils.makeActionCreator(actionTypes.FETCH_COMMENTS_SUCCESS, 'comments');

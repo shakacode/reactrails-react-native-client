@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/comments.json';
+const API_URL = 'http://reactrails.com/comments.json';
 
 export default {
 
