@@ -6,8 +6,8 @@ import * as actionTypes from '../constants/commentsConstants';
 export function* submitComment(action) {
   try {
     const responsePromise = yield call(() => api.submitEntity({ comment: action.comment }));
-    const { comment, error } = yield call(() => responsePromise.json());
-    if (error) throw error;
+    const comment = yield call(() => responsePromise.json());
+    if (comment.error) throw comment.error;
     yield put({ type: actionTypes.SUBMIT_COMMENT_SUCCESS, comment });
   } catch (e) {
     yield put({ type: actionTypes.SUBMIT_COMMENT_FAILURE, error: e.message || e });

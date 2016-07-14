@@ -29,7 +29,7 @@ export const commentsHandlers = {
     });
   },
 
-  [actionTypes.SUBMIT_COMMENT_SUCCESS]($$state: $$Map, action: { comment: String }) {
+  [actionTypes.SUBMIT_COMMENT_SUCCESS]($$state: $$Map, action: { comment: Object }) {
     return $$state.withMutations(state => (
       state
         .updateIn(
@@ -37,7 +37,7 @@ export const commentsHandlers = {
           $$comments => $$comments.unshift(Immutable.fromJS(action.comment))
         )
         .merge({
-          submitCommentError: null,
+          fetchCommentError: null,
           isSaving: false,
         })
     ));

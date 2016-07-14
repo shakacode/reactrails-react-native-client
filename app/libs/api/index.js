@@ -1,4 +1,4 @@
-const API_URL = 'http://www.reactrails.com/comments.json';
+const API_URL = 'http://localhost:5000/comments.json';
 
 export default {
 
@@ -23,9 +23,9 @@ export default {
       method: 'POST',
       headers: {
         Accept: 'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json;charset=UTF-8',
       },
-      data: entity,
+      body: JSON.stringify(entity),
     });
   },
 

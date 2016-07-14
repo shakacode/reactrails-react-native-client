@@ -21,7 +21,7 @@ const AddComment = (props) => (
     />
     <Text>Comment</Text>
     <TextInput
-      onChangeText={(text) => props.updateState({ comment: text })}
+      onChangeText={(text) => props.updateState({ text })}
       value={props.getState().comment}
       style={styles.input}
     />
