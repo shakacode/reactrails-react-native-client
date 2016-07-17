@@ -2,9 +2,9 @@ import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import _ from 'lodash/fp';
 
-import loggerMiddleware from '../libs/middlewares/loggerMiddleware';
-import reducers, { initialStates } from '../reducers';
-import sagas from '../sagas';
+import loggerMiddleware from 'ReactNativeTutorial/app/libs/middlewares/loggerMiddleware';
+import reducers, { initialStates } from 'ReactNativeTutorial/app/reducers';
+import sagas from 'ReactNativeTutorial/app/sagas';
 
 export default () => {
   const initialState = {

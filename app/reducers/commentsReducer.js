@@ -1,9 +1,9 @@
 /* eslint new-cap: 0 */
 
 import Immutable, { Map as $$Map } from 'immutable';
-import { createReducer } from '../libs/utils/redux';
+import { createReducer } from 'ReactNativeTutorial/app/libs/utils/redux';
 
-import * as actionTypes from '../constants/commentsConstants';
+import * as actionTypes from 'ReactNativeTutorial/app/constants/commentsConstants';
 
 export const $$initialState = Immutable.fromJS({
   $$comments: [],

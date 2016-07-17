@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import AppNavigator from './AppNavigator';
-import * as commentsActions from '../actions/commentsActionCreators';
+import * as commentsActions from 'ReactNativeTutorial/app/actions/commentsActionCreators';
 
 const ReduxContainer = (props) => <AppNavigator {...props} />;
 

@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { $paddingTop } from '../../constants/platform';
-import * as colors from '../../constants/colors';
+import { $paddingTop } from 'ReactNativeTutorial/app/constants/platform';
+import * as colors from 'ReactNativeTutorial/app/constants/colors';
 
 const styles = StyleSheet.create({
   container: {
