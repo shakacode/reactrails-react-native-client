@@ -29,6 +29,10 @@ Please see https://github.com/shakacode/react-webpack-rails-tutorial for more in
   cd react-native-tutorial && npm i
   ```
 
+### Backend API
+
+* Currently connecting by default to http://www.reactrails.com/. Be aware of that!
+
 ### Running IOS
 ```
 react-native run-ios
