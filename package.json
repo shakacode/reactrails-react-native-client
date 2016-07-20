@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "mocha --opts test/mocha.opts test/**/*.spec.js",
+    "test": "mocha --opts test/mocha.opts 'test/**/*.spec.js'",
+    "test_android": "env MOCHA_PLATFORM=android mocha --opts test/mocha.opts 'test/**/*.spec.js'",
     "lint": "node_modules/eslint/bin/eslint.js ."
   },
   "dependencies": {
@@ -19,6 +20,8 @@
     "reselect": "^2.5.3"
   },
   "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-resolver": "0.0.18",
     "chai": "^3.5.0",
     "enzyme": "2.3.0",
     "eslint": "2.9.0",

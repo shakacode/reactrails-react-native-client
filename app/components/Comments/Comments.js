@@ -7,10 +7,10 @@ import {
  } from 'react-native';
 import _ from 'lodash/fp';
 
-import Comment from '../Comment/Comment';
-import Button from '../Button/Button';
-import withRemoteDataSource from '../../hocs/withRemoteDataSource';
-import routes from '../../constants/routes';
+import Comment from 'ReactNativeTutorial/app/components/Comment/Comment';
+import Button from 'ReactNativeTutorial/app/components/Button/Button';
+import withRemoteDataSource from 'ReactNativeTutorial/app/hocs/withRemoteDataSource';
+import routes from 'ReactNativeTutorial/app/constants/routes';
 import styles from './CommentsStyle';
 
 const Comments = (props) => (

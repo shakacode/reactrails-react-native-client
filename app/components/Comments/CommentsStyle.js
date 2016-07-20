@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { $paddingTop } from '../../constants/platform';
-import * as colors from '../../constants/colors';
+import { $paddingTop } from 'ReactNativeTutorial/app/constants/platform';
+import * as colors from 'ReactNativeTutorial/app/constants/colors';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;

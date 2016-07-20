@@ -2,9 +2,9 @@ import React, { PropTypes, Component } from 'react';
 import { Navigator } from 'react-native';
 import _ from 'lodash/fp';
 
-import routes from '../constants/routes';
-import Comments from '../components/Comments/Comments';
-import AddComment from '../components/AddComment/AddComment';
+import routes from 'ReactNativeTutorial/app/constants/routes';
+import Comments from 'ReactNativeTutorial/app/components/Comments/Comments';
+import AddComment from 'ReactNativeTutorial/app/components/AddComment/AddComment';
 
 export default class AppNavigator extends Component {
 

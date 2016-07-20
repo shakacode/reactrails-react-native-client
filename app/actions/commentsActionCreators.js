@@ -1,5 +1,5 @@
-import * as actionTypes from '../constants/commentsConstants';
-import * as reduxUtils from '../libs/utils/redux';
+import * as actionTypes from 'ReactNativeTutorial/app/constants/commentsConstants';
+import * as reduxUtils from 'ReactNativeTutorial/app/libs/utils/redux';
 
 export const fetchCommentsRequest =
   reduxUtils.makeActionCreator(actionTypes.FETCH_COMMENTS_REQUEST);
