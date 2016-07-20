@@ -8,7 +8,10 @@ const withAddCommentHandlers = Component => class extends React.Component {
     getState: PropTypes.func.isRequired,
     actions: PropTypes.shape({
       submitCommentRequest: PropTypes.func.isRequired,
+      resetErrorState: PropTypes.func.isRequired,
     }),
+    error: PropTypes.string,
+    isSaving: PropTypes.bool,
   }
 
   constructor(props) {
@@ -16,12 +19,19 @@ const withAddCommentHandlers = Component => class extends React.Component {
     _.bindAll(['addComment', 'cancel'], this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.isSaving && !nextProps.isSaving && !nextProps.error) {
+      this.props.actions.resetErrorState();
+      this.props.navigator.pop();
+    }
+  }
+
   addComment() {
     this.props.actions.submitCommentRequest(this.props.getState());
-    this.props.navigator.pop();
   }
 
   cancel() {
+    this.props.actions.resetErrorState();
     this.props.navigator.pop();
   }
 
