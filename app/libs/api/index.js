@@ -1,5 +1,6 @@
 // SAME URL for both post and get
 const API_URL = 'http://www.reactrails.com/comments.json';
+
 // const API_URL = 'http://localhost:3000/comments.json';
 
 export default {

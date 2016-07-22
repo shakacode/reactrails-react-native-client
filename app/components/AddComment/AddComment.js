@@ -2,7 +2,8 @@ import React, { PropTypes } from 'react';
 import { Text, View, TextInput } from 'react-native';
 import _ from 'lodash/fp';
 
-import ActivityIndicator from 'ReactNativeTutorial/app/components/ActivityIndicator/ActivityIndicator';
+import ActivityIndicator from
+  'ReactNativeTutorial/app/components/ActivityIndicator/ActivityIndicator';
 import withFormState from 'ReactNativeTutorial/app/hocs/withFormState';
 import withAddCommentHandlers from 'ReactNativeTutorial/app/hocs/withAddCommentHandlers';
 import Button from 'ReactNativeTutorial/app/components/Button/Button';

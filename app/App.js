@@ -1,10 +1,11 @@
+// @flow
 import React from 'react';
 import { Provider } from 'react-redux';
 
 import createStore from './store/store';
 import ReduxContainer from './containers/ReduxContainer';
 
-export default () => {
+export default ():ReactElement => {
   const store = createStore();
   return (
     <Provider store={store}>

@@ -14,7 +14,7 @@ const withRemoteDataSource = (selector, Component) => class extends React.Compon
 
   static propTypes = {
     remoteDataSourceFetch: PropTypes.func.isRequired,
-  }
+  };
 
   constructor(props) {
     super(props);

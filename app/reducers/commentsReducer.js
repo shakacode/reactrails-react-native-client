@@ -1,3 +1,4 @@
+// @flow
 /* eslint new-cap: 0 */
 
 import Immutable, { Map as $$Map } from 'immutable';
@@ -14,7 +15,7 @@ export const $$initialState = Immutable.fromJS({
 });
 
 export const commentsHandlers = {
-  [actionTypes.FETCH_COMMENTS_SUCCESS]($$state: $$Map, action: { comments: Object }) {
+  [actionTypes.FETCH_COMMENTS_SUCCESS]($$state:$$Map, action:{ comments: Object }) {
     return $$state.merge({
       $$comments: action.comments,
       error: null,
@@ -22,14 +23,14 @@ export const commentsHandlers = {
     });
   },
 
-  [actionTypes.FETCH_COMMENTS_FAILURE]($$state: $$Map, action: { error: String }) {
+  [actionTypes.FETCH_COMMENTS_FAILURE]($$state:$$Map, action:{ error: String }) {
     return $$state.merge({
       error: action.error,
       isFetching: false,
     });
   },
 
-  [actionTypes.SUBMIT_COMMENT_SUCCESS]($$state: $$Map, action: { comment: Object }) {
+  [actionTypes.SUBMIT_COMMENT_SUCCESS]($$state:$$Map, action:{ comment: Object }) {
     return $$state.withMutations(state => (
       state
         .updateIn(
@@ -43,26 +44,26 @@ export const commentsHandlers = {
     ));
   },
 
-  [actionTypes.SUBMIT_COMMENT_FAILURE]($$state: $$Map, action: { error: String }) {
+  [actionTypes.SUBMIT_COMMENT_FAILURE]($$state:$$Map, action:{ error: String }) {
     return $$state.merge({
       error: action.error,
       isSaving: false,
     });
   },
 
-  [actionTypes.FETCH_COMMENTS_REQUEST]($$state: $$Map) {
+  [actionTypes.FETCH_COMMENTS_REQUEST]($$state:$$Map) {
     return $$state.merge({
       isFetching: true,
     });
   },
 
-  [actionTypes.SUBMIT_COMMENT_REQUEST]($$state: $$Map) {
+  [actionTypes.SUBMIT_COMMENT_REQUEST]($$state:$$Map) {
     return $$state.merge({
       isSaving: true,
     });
   },
 
-  [actionTypes.RESET_ERROR_STATE]($$state: $$Map) {
+  [actionTypes.RESET_ERROR_STATE]($$state:$$Map) {
     return $$state.merge({
       error: null,
     });

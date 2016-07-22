@@ -1,3 +1,4 @@
+// @flow
 import { makeActionCreator, createReducer } from '../../../app/libs/utils/redux';
 import { expect } from 'chai';
 import Immutable from 'immutable';
@@ -22,7 +23,7 @@ describe('redux', () => {
       const $$initialState = Immutable.fromJS([2]);
       const handlers = {
         ADD_ITEM: ($$state) => $$state.push(0),
-        INCREASE: ($$state, action: { index: number }) => $$state.update(action.index, x => x + 1),
+        INCREASE: ($$state, action:{ index:number }) => $$state.update(action.index, x => x + 1),
       };
       const reducer = createReducer($$initialState, handlers);
 

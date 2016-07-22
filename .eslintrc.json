@@ -2,7 +2,8 @@
   "extends": "eslint-config-shakacode",
 
   "plugins": [
-    "react-native"
+    "react-native",
+    "flowtype"
   ],
 
   "env": {
@@ -17,6 +18,9 @@
         "extensions": [".js", ".android.js", ".ios.js"],
         "moduleDirectory": ["..", "node_modules"]
       }
+    },
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
     }
   },
   
@@ -31,6 +35,27 @@
     "react-native/no-color-literals": 2,
     "react/jsx-no-bind": 1,
     "react/prefer-stateless-function": 1,
-    "react/jsx-indent": 1
+    "react/jsx-indent": 1,
+
+    "flowtype/require-parameter-type": 1,
+    "flowtype/require-return-type": [
+      1,
+      "always",
+      {
+        "annotateUndefined": "never"
+      }
+    ],
+    "flowtype/space-after-type-colon": [
+      1,
+      "never"
+    ],
+    "flowtype/space-before-type-colon": [
+      1,
+      "never"
+    ],
+    "flowtype/type-id-match": [
+      1,
+      "^([A-Z][a-z0-9]+)+Type$"
+    ]
   }
 }
