@@ -22,8 +22,9 @@ describe('redux', () => {
     it('creates a reducers from a hash of individual reducers functions', () => {
       const $$initialState = Immutable.fromJS([2]);
       const handlers = {
-        ADD_ITEM: ($$state) => $$state.push(0),
-        INCREASE: ($$state, action:{ index:number }) => $$state.update(action.index, x => x + 1),
+        ADD_ITEM: ($$state: Object) => $$state.push(0),
+        INCREASE: ($$state: Object, action: { index: number }) =>
+          $$state.update(action.index, (x: number) => x + 1),
       };
       const reducer = createReducer($$initialState, handlers);
 

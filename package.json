@@ -8,7 +8,7 @@
     "test_android": "env MOCHA_PLATFORM=android mocha --opts test/mocha.opts 'test/**/*.spec.js'",
     "eslint": "eslint --ext .js,.jsx .",
     "jscs": "jscs .",
-    "lint": "npm run eslint && npm run jscs"
+    "lint": "npm run eslint"
   },
   "dependencies": {
     "babel-polyfill": "^6.9.1",

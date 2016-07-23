@@ -39,7 +39,7 @@
 
     "flowtype/require-parameter-type": 1,
     "flowtype/require-return-type": [
-      1,
+      0,
       "always",
       {
         "annotateUndefined": "never"
@@ -47,7 +47,7 @@
     ],
     "flowtype/space-after-type-colon": [
       1,
-      "never"
+      "always"
     ],
     "flowtype/space-before-type-colon": [
       1,

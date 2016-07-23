@@ -1,22 +1,22 @@
 // @flow
-import React, {PropTypes} from 'react';
+import React from 'react';
 import _ from 'lodash/fp';
 
 const withAddCommentHandlers = (
-  Component: ReactClass
-):ReactClass<{}> => class extends React.Component {
+  Component: any
+) => class extends React.Component {
   constructor(
-    props: {navigator:Object,
-      getState:Function,
-      actions:{ submitCommentRequest:Function,
-        resetErrorState:Function},
-      error:string,
-      isSaving:bool}) {
+    props: { navigator: Object,
+      getState: Function,
+      actions: { submitCommentRequest: Function,
+        resetErrorState: Function },
+      error: string,
+      isSaving: bool }) {
     super(props);
     _.bindAll(['addComment', 'cancel'], this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: {}) {
     if (this.props.isSaving && !nextProps.isSaving && !nextProps.error) {
       this.props.actions.resetErrorState();
       this.props.navigator.pop();
@@ -33,7 +33,7 @@ const withAddCommentHandlers = (
   }
 
   render() {
-    return <Component {...this.props} addComment={this.addComment} cancel={this.cancel}/>;
+    return < Component {...this.props} addComment={this.addComment} cancel={this.cancel} />;
   }
 };
 

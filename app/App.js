@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import createStore from './store/store';
 import ReduxContainer from './containers/ReduxContainer';
 
-export default ():ReactElement => {
+export default () => {
   const store = createStore();
   return (
     <Provider store={store}>
