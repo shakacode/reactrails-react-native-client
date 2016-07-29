@@ -8,7 +8,8 @@ import _ from 'lodash/fp';
 
 import Comment from 'ReactNativeTutorial/app/components/Comment/Comment';
 import Button from 'ReactNativeTutorial/app/components/Button/Button';
-import ActivityIndicator from 'ReactNativeTutorial/app/components/ActivityIndicator/ActivityIndicator';
+import ActivityIndicator from
+  'ReactNativeTutorial/app/components/ActivityIndicator/ActivityIndicator';
 import withRemoteDataSource from 'ReactNativeTutorial/app/hocs/withRemoteDataSource';
 import routes from 'ReactNativeTutorial/app/constants/routes';
 import styles from './CommentsStyle';
@@ -21,6 +22,7 @@ const Comments = (props) => (
           props.actions.resetErrorState();
           props.remoteDataSourceFetch();
         }}
+
         text="Reload"
       />
       <Button
@@ -28,6 +30,7 @@ const Comments = (props) => (
           props.actions.resetErrorState();
           props.navigator.push({ path: routes.ADD_COMMENT });
         }}
+
         text="Add Comment"
       />
     </View>

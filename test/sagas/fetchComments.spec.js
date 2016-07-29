@@ -12,7 +12,7 @@ describe('fetchComments', () => {
       const effect = iterator.next(
           { comments:
             ['comment1', 'comment2'],
-          },
+      },
       ).value;
       expect(effect).to.deep.equal(
         put({

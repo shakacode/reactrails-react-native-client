@@ -12,6 +12,7 @@ export function* submitComment(action) {
     if (!comment.hasOwnProperty('author') || !comment.hasOwnProperty('text')) {
       throw errors.UNEXPECTED_SERVER_RESPONSE;
     }
+
     yield put({ type: actionTypes.SUBMIT_COMMENT_SUCCESS, comment });
   } catch (e) {
     yield put({ type: actionTypes.SUBMIT_COMMENT_FAILURE, error: e.message || e });

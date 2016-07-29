@@ -1,3 +1,4 @@
+// @flow
 /* eslint new-cap: 0 */
 
 import Immutable, { Map as $$Map } from 'immutable';
@@ -30,11 +31,11 @@ export const commentsHandlers = {
   },
 
   [actionTypes.SUBMIT_COMMENT_SUCCESS]($$state: $$Map, action: { comment: Object }) {
-    return $$state.withMutations(state => (
+    return $$state.withMutations((state: $$Map) => (
       state
         .updateIn(
           ['$$comments'],
-          $$comments => $$comments.unshift(Immutable.fromJS(action.comment))
+          ($$comments: Object) => $$comments.unshift(Immutable.fromJS(action.comment))
         )
         .merge({
           error: null,
