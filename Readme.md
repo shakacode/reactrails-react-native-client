@@ -21,7 +21,7 @@ Please see https://github.com/shakacode/react-webpack-rails-tutorial for more in
 5. Clone react-native-tutorial repo
 
   ```
-  git clone git@github.com:shakacode/react-native-tutorial.git
+  git clone git@github.com:shakacode/react-native-tutorial.git ReactNativeTutorial
   ```
 6. Install dependencies
 
