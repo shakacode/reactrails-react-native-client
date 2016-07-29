@@ -18,7 +18,7 @@ Please see https://github.com/shakacode/react-webpack-rails-tutorial for more in
   brew install watchman
   brew install flow
   ```
-5. Clone react-native-tutorial repo
+5. Clone react-native-tutorial repo. Note, you need to name the directory in PascalCase, per below. The reason is for running the tests with an absolute file path.
 
   ```
   git clone git@github.com:shakacode/react-native-tutorial.git ReactNativeTutorial
