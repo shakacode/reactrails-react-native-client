@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import commentFormSelector from 'ReactRailsApp/app/selectors/commentFormSelector';
+import commentFormSelector from 'app/selectors/commentFormSelector';
 import * as actions from '../thunks';
 
 export type AddPropsType = {

@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import commentsPropsSelector from 'ReactRailsApp/app/selectors/commentsPropsSelector';
+import commentsPropsSelector from 'app/selectors/commentsPropsSelector';
 import * as actions from '../thunks';
 
 type CommentType = {
