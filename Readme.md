@@ -1,6 +1,6 @@
 ## React Native Tutorial
-This is a simple mobile app for posting comments in React Native.
-This tutorial shows how to connect to the the https://www.reactrails.com API for a sample microblog.
+This is a simple mobile app example for posting comments in React Native. It connexts the API at
+https://www.reactrails.com. You can see a web client there, plus links to the source.
 
 ### Setup
 1. Install the latest version of Xcode from AppStore or https://developer.apple.com/download/ (Apple ID required)
@@ -31,14 +31,34 @@ This tutorial shows how to connect to the the https://www.reactrails.com API for
   npm i
   ```
 
+7. Install Native Dependencies (maybe)
+
+* vector-icons
+
+
+## Customization in Native Files
+
+Besides adding vector-icons
+
+1. App name
+2. Icons, both ios and android
+
+### Android
+
+Android Keystore
+1. Edit `android/app/src/main/AndroidManifest.xml`
+
+
+
 ### Backend API
 
 * Currently connecting by default to https://www.reactrails.com/. Be aware of that!
 * The url can be changed app/api/index.js. Keep in mind, that Android emulator is
-a separate Virtual Machine with its own localhost binding. To make the api available under emulator,
-you have to use ip address of your computer, that could be seen by running `ifconfig` in the shell
+a separate Virtual Machine with its own localhost binding. To make the api available under that emulator,
+you will have to use ip address of your computer, which can be seen by running `ifconfig` in the shell
 
 ### Running IOS
+
 ```
 react-native run-ios
 ```
@@ -49,18 +69,21 @@ react-native run-ios
   - Run `android sdk` from bash and find installed build tools version there
 2. Run emulator from Android studio or `emulator @<version>` from bash (you can find installed version by running `emulator -list-avds` from bash)
 3. From project folder run
+
 ```
 react-native run-android
 ```
 
 ### Testing
 Testing framework uses mocha + enzyme, to run tests type
+
 ```
 npm test
 ```
 
 ### Linters
 This projects uses Eslint with React and React Native rules. To run linters type
+
 ```
 npm run lint
 ```
@@ -68,6 +91,7 @@ npm run lint
 
 ### Flow
 This projects uses Eslint with React and React Native rules. To run linters type
+
 ```
 npm run flow
 ```
