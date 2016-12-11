@@ -1,15 +1,13 @@
 // @flow
 import React from 'react';
 import { Provider } from 'react-redux';
+import store from './setup/store';
+import Router from './setup/Router/Router';
 
-import createStore from './store/store';
-import ReduxContainer from './containers/ReduxContainer';
+const App = () => (
+  <Provider store={store}>
+    <Router />
+  </Provider>
+);
 
-export default () => {
-  const store = createStore();
-  return (
-    <Provider store={store}>
-      <ReduxContainer />
-    </Provider>
-  );
-};
+export default App;
