@@ -1,5 +1,4 @@
 // @flow
-import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -26,7 +25,7 @@ const mapDispatchToProps = (dispatch: Function) => ({
   actions: bindActionCreators(actions, dispatch),
 });
 
-export default (Component: React.Component<AddPropsType>) => connect(
+export default (Component: ReactClass<AddPropsType>) => connect(
   mapStateToProps,
   mapDispatchToProps,
 )(Component);

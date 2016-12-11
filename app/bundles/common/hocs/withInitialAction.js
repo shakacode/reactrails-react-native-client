@@ -3,7 +3,7 @@
 import React from 'react';
 
 export default (selector: (x: any) => Function) =>
-  (Component: React.Component<any>) =>
+  (Component: ReactClass<any>) =>
     class extends React.Component {
       componentDidMount() {
         selector(this.props)();

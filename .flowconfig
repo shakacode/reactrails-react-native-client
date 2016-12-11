@@ -13,6 +13,7 @@
 ; "node_modules/react-native" but in the source repo it is in the root
 .*/Libraries/react-native/React.js
 .*/Libraries/react-native/ReactNative.js
+.*/node_modules/react-native/Libraries/Components/StaticContainer.js
 
 ; https://github.com/aksonov/react-native-router-flux/issues/892#issuecomment-230104301
 .*/node_modules/react-native-experimental-navigation/.*
@@ -45,4 +46,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 unsafe.enable_getters_and_setters=true
 
 [version]
-^0.36.0
+^0.35.0
