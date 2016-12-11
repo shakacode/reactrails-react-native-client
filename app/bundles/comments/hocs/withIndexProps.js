@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unused-prop-types */
 // @flow
+import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import commentsPropsSelector from 'ReactRailsApp/app/selectors/commentsPropsSelector';
+import commentsPropsSelector from 'app/selectors/commentsPropsSelector';
 import * as actions from '../thunks';
 
 type CommentType = {
@@ -33,5 +34,5 @@ const mapDispatchToProps = (dispatch: Function) => ({
   actions: bindActionCreators(actions, dispatch),
 });
 
-export default (Component: ReactClass<IndexPropsType>) =>
+export default (Component: React.Component<IndexPropsType>) =>
   connect(mapStateToProps, mapDispatchToProps)(Component);

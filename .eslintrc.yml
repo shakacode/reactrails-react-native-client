@@ -43,3 +43,9 @@ rules:
   flowtype/type-id-match:
   - 1
   - "^([A-Z][a-z0-9]+)+Type$"
+
+  react/jsx-filename-extension:
+    - 1
+    - extensions: [".js", ".jsx"]
+  import/extensions:
+    - 0
