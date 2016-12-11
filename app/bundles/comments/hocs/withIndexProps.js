@@ -26,7 +26,7 @@ export type IndexPropsType = {
 
 const mapStateToProps = createSelector(
   commentsPropsSelector,
-  props => props.toJS()
+  props => props.toJS(),
 );
 
 const mapDispatchToProps = (dispatch: Function) => ({

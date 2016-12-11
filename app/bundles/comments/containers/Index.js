@@ -5,5 +5,5 @@ import Index from '../components/Index/Index';
 
 export default _.compose(
   withIndexProps,
-  withInitialAction(_.get(['actions', 'fetch']))
+  withInitialAction(_.get(['actions', 'fetch'])),
 )(Index);

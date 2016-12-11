@@ -18,7 +18,7 @@ export type AddPropsType = {
 
 const mapStateToProps = createSelector(
   commentFormSelector,
-  (commentForm: any) => commentForm.toJS()
+  (commentForm: any) => commentForm.toJS(),
 );
 
 const mapDispatchToProps = (dispatch: Function) => ({
@@ -27,5 +27,5 @@ const mapDispatchToProps = (dispatch: Function) => ({
 
 export default (Component: ReactClass<AddPropsType>) => connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Component);

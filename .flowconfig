@@ -14,6 +14,9 @@
 .*/Libraries/react-native/React.js
 .*/Libraries/react-native/ReactNative.js
 
+; https://github.com/aksonov/react-native-router-flux/issues/892#issuecomment-230104301
+.*/node_modules/react-native-experimental-navigation/.*
+
 [include]
 
 [libs]
