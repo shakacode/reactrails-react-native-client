@@ -1,5 +1,5 @@
 import React from 'react';
-import withIndexProps from 'ReactNativeTutorial/app/bundles/comments/hocs/withIndexProps';
+import withIndexProps from 'ReactRailsApp/app/bundles/comments/hocs/withIndexProps';
 import Mock from 'mock';
 import renderer from 'react-test-renderer';
 import { createStoreFromState, initialState } from 'redux-mock-store';

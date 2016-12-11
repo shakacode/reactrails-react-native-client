@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import commentFormSelector from 'ReactNativeTutorial/app/selectors/commentFormSelector';
+import commentFormSelector from 'ReactRailsApp/app/selectors/commentFormSelector';
 
 describe('commentFormSelector', () => {
   it('selects the comment form store', () => {

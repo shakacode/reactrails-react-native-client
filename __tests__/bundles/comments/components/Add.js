@@ -1,5 +1,5 @@
 import React from 'react';
-import Add from 'ReactNativeTutorial/app/bundles/comments/components/Add/Add';
+import Add from 'ReactRailsApp/app/bundles/comments/components/Add/Add';
 
 import renderer from 'react-test-renderer';
 

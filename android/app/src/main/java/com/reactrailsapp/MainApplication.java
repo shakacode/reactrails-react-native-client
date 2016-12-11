@@ -1,4 +1,4 @@
-package com.reactnativetutorial;
+package com.reactrailsapp;
 
 import android.app.Application;
 import android.util.Log;

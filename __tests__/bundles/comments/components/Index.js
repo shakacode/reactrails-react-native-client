@@ -1,5 +1,5 @@
 import React from 'react';
-import Index from 'ReactNativeTutorial/app/bundles/comments/components/Index/Index';
+import Index from 'ReactRailsApp/app/bundles/comments/components/Index/Index';
 
 import renderer from 'react-test-renderer';
 

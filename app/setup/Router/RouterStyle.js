@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
-import * as colors from 'ReactNativeTutorial/app/styles/colors';
-import * as sizes from 'ReactNativeTutorial/app/styles/sizes';
+import * as colors from 'ReactRailsApp/app/styles/colors';
+import * as sizes from 'ReactRailsApp/app/styles/sizes';
 
 const styles = StyleSheet.create({
   container: {

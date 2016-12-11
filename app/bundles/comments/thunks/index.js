@@ -1,11 +1,11 @@
 import { Alert } from 'react-native';
 import { Actions as navigationActions } from 'react-native-router-flux';
-import { reduxUtils } from 'ReactNativeTutorial/app/utils';
-import commentsStoreSelector from 'ReactNativeTutorial/app/selectors/commentsStoreSelector';
-import commentFormSelector from 'ReactNativeTutorial/app/selectors/commentFormSelector';
+import { reduxUtils } from 'ReactRailsApp/app/utils';
+import commentsStoreSelector from 'ReactRailsApp/app/selectors/commentsStoreSelector';
+import commentFormSelector from 'ReactRailsApp/app/selectors/commentFormSelector';
 
-import { actions as reduxActions } from 'ReactNativeTutorial/app/reducers';
-import * as api from 'ReactNativeTutorial/app/api';
+import { actions as reduxActions } from 'ReactRailsApp/app/reducers';
+import * as api from 'ReactRailsApp/app/api';
 
 export const fetch = () =>
   async function fetchCommentsThunk(dispatch, _getState, call) {

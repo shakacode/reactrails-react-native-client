@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import commentsStoreSelector from 'ReactNativeTutorial/app/selectors/commentsStoreSelector';
+import commentsStoreSelector from 'ReactRailsApp/app/selectors/commentsStoreSelector';
 
 describe('commentsStoreSelector', () => {
   it('selects the comments store', () => {

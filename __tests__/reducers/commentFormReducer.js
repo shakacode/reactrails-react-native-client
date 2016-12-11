@@ -1,4 +1,4 @@
-import commentFormReducer, { actions, initialState } from 'ReactNativeTutorial/app/reducers/commentFormReducer';
+import commentFormReducer, { actions, initialState } from 'ReactRailsApp/app/reducers/commentFormReducer';
 
 describe('commentFormReducer', () => {
   describe('updateCommentForm', () => {

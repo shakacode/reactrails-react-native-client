@@ -1,6 +1,6 @@
 import createDefaultStore from 'redux-mock-store';
 import { mockCalls, resetMockCalls } from 'mockCall';
-import * as actions from 'ReactNativeTutorial/app/bundles/comments/thunks';
+import * as actions from 'ReactRailsApp/app/bundles/comments/thunks';
 
 describe('fetch', () => {
   let store;

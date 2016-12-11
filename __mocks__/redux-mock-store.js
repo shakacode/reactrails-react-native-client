@@ -1,5 +1,5 @@
 import configureMockStore from 'redux-mock-store';
-import { initialState as reduxInitialState } from 'ReactNativeTutorial/app/reducers';
+import { initialState as reduxInitialState } from 'ReactRailsApp/app/reducers';
 
 import mockThunkMiddleware from './mockThunkMiddleware';
 

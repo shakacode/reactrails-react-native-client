@@ -1,5 +1,5 @@
 import { fromJS } from 'immutable';
-import commentsStoreReducer, { actions, initialState } from 'ReactNativeTutorial/app/reducers/commentsStoreReducer';
+import commentsStoreReducer, { actions, initialState } from 'ReactRailsApp/app/reducers/commentsStoreReducer';
 
 const sampleData = {
   1: { id: 1, author: 'Alexey', text: 'Random comment' },

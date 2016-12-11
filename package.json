@@ -1,19 +1,19 @@
 {
-  "name": "ReactNativeTutorial",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
+	"name": "ReactRailsApp",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest",
     "flow": "node_modules/flow-bin/cli.js",
     "lint": "node_modules/eslint/bin/eslint.js --config .eslintrc.yml app"
-  },
-  "dependencies": {
+	},
+	"dependencies": {
     "immutable": "^3.8.1",
     "lodash": "^4.17.2",
     "normalizr": "^2.3.0",
-    "react": "15.4.1",
-    "react-native": "^0.40.0-rc.2",
+		"react": "15.4.1",
+		"react-native": "0.39.1",
     "react-native-elements": "^0.7.1",
     "react-native-router-flux": "^3.37.0",
     "react-native-vector-icons": "^3.0.0",
@@ -23,7 +23,7 @@
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.4",
     "whatwg-fetch": "^2.0.1"
-  },
+	},
   "jest": {
     "preset": "jest-react-native",
     "setupFiles": [

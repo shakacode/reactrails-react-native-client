@@ -1,5 +1,5 @@
 import React from 'react';
-import withAddProps from 'ReactNativeTutorial/app/bundles/comments/hocs/withAddProps';
+import withAddProps from 'ReactRailsApp/app/bundles/comments/hocs/withAddProps';
 import Mock from 'mock';
 import renderer from 'react-test-renderer';
 import {createStoreFromState, initialState} from 'redux-mock-store';

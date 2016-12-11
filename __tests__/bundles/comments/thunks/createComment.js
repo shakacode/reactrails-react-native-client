@@ -1,7 +1,7 @@
 import { fromJS } from 'immutable';
 import { createStoreFromState } from 'redux-mock-store';
 import { mockCalls } from 'mockCall';
-import * as actions from 'ReactNativeTutorial/app/bundles/comments/thunks';
+import * as actions from 'ReactRailsApp/app/bundles/comments/thunks';
 
 describe('createComment', () => {
   it('creates a comment in the store and sends request to api', async() => {
