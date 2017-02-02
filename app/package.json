@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "dependencies": {
+    "immutable": "*",
+    "lodash": "*",
+    "normalizr": "*",
+    "react": "*",
+    "react-native": "*",
+    "react-native-elements": "*",
+    "react-native-router-flux": "*",
+    "react-native-vector-icons": "*",
+    "react-redux": "*",
+    "redux": "*",
+    "redux-immutable": "*",
+    "redux-thunk": "*",
+    "reselect": "*",
+    "whatwg-fetch": "*"
+  }
+}
