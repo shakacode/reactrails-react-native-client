@@ -1,5 +1,5 @@
 ## React Native Tutorial
-This is a simple mobile app example for posting comments in React Native. It connexts the API at
+This is a simple mobile app example for posting comments in React Native. It connects the API at
 https://www.reactrails.com. You can see a web client there, plus links to the source.
 
 ### Setup
