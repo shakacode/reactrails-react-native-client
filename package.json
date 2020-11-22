@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "immutable": "^3.8.1",
-    "lodash": "^4.17.2",
+    "lodash": "^4.17.19",
     "normalizr": "^2.3.0",
     "react": "15.4.1",
     "react-native": "0.39.1",
